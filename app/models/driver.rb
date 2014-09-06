@@ -5,6 +5,6 @@ class Driver < ActiveRecord::Base
   has_many :readings
 
   def generate_token
-    self.token = SecureRandom.hex(4)
+    self.token = SecureRandom.hex(2)
   end
 end
