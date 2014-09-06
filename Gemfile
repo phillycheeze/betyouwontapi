@@ -8,6 +8,8 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
+gem 'faker'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -17,7 +19,6 @@ gem 'active_model_serializers', '~> 0.8.1'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'faker'
 end
 
 group :test do

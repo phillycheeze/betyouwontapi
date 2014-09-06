@@ -1,5 +1,4 @@
 class ReadingsController < ApplicationController
-  before_action :authenticate, except: :create
 
   def create
     if d = Driver.find_by(token: params[:reading][:token])
