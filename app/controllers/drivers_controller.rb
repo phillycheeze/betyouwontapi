@@ -23,6 +23,10 @@ class DriversController < ApplicationController
     render json: @current_user.drivers.find(params[:id])
   end
 
+  def token
+
+  end
+
   def create_params
     params.require(:driver).permit(
       :name

@@ -3,10 +3,9 @@ class Reading < ActiveRecord::Base
 
   def self.values 
     [
-      'EngRPM',
-      'ODO',
-      'VEH_SPEED',
-      'VehAccel_X'
+      'Odometer',
+      'VehicleSpeed',
+      'EngineSpeed'
     ]
   end
 
