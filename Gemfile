@@ -6,12 +6,12 @@ gem 'rails-api'
 
 gem 'spring', :group => :development
 
-gem 'sqlite3'
-
-
+gem 'pg'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'active_model_serializers', '~> 0.8.1'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
