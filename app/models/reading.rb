@@ -1,6 +1,15 @@
 class Reading < ActiveRecord::Base
   belongs_to :driver
 
+  def self.values 
+    [
+      'EngRPM',
+      'ODO',
+      'VEH_SPEED',
+      'VehAccel_X'
+    ]
+  end
+
   validates :value,
     presence: true
 
@@ -10,14 +19,4 @@ class Reading < ActiveRecord::Base
 
   validates :timestamp,
     presence: true
-
-
-  def self.values 
-    [
-      'EngRPM',
-      'ODO',
-      'VEH_SPEED',
-      'VehAccel_X'
-    ]
-  end
 end
