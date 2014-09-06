@@ -7,4 +7,13 @@ class ReadingsController < ApplicationController
 
   def show
   end
+
+  def create_params
+    params.require(:reading).permit(
+      :name,
+      :value,
+      :timestamp,
+      :token
+    )
+  end
 end
