@@ -11,6 +11,8 @@ gem 'pg'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem "rack-cors", :require => "rack/cors"
+
 gem 'active_model_serializers', '~> 0.8.1'
 
 # To use Jbuilder templates for JSON
