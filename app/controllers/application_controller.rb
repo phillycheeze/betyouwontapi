@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    @current_user = User.find_by(authentication_token: auth_token) if auth_token
+    @current_user = Manager.find_by(authentication_token: auth_token) if auth_token
   end
 
   def auth_token
