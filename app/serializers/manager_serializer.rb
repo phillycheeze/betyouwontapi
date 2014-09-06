@@ -1,3 +1,3 @@
 class ManagerSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :email, :full_name
 end

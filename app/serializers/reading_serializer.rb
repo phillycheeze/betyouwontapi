@@ -1,3 +1,3 @@
 class ReadingSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :value, :timestamp
 end
