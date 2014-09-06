@@ -13,7 +13,7 @@ class Manager < ActiveRecord::Base
   validates(:email, format: /\A.+@.+\Z/)
 
   def generate_token
-    self.authentication_token = SecureRandom.hex(4)
+    self.authentication_token = SecureRandom.hex
   end
 
   def auth_token
