@@ -20,4 +20,10 @@ class DriversController < ApplicationController
   def show
     render json: @current_user.drivers.find(params[:id])
   end
+
+  def create_params
+    params.require(:driver).permit(
+      :name
+    )
+  end
 end
