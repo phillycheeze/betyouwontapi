@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, except: :token
 
   def create
     if m = @current_user.drivers.create(create_params)
@@ -24,12 +24,14 @@ class DriversController < ApplicationController
   end
 
   def token
-
+    if d = Driver.find_by(token: params[:token])
+      render json: { driver: { name: d.name } }
+    else
+      head :no_content
+    end
   end
 
   def create_params
-    params.require(:driver).permit(
-      :name
-    )
+    params.require(:driver).permit(:name)
   end
 end
