@@ -14,4 +14,5 @@ class ManagersController < ApplicationController
       :password,
       :password_confirmation
     )
+  end
 end
