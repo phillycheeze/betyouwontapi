@@ -2,9 +2,7 @@ class ReadingsController < ApplicationController
   before_action :authenticate, except: :create
 
   def create
-    d = Driver.where(token: create_params[:token])
-    if d
-      create_params.delete(:token)
+    if d = Driver.find_by token: params[:token]
       if r = d.readings.create(create_params)
         render json: r
       else
@@ -14,15 +12,13 @@ class ReadingsController < ApplicationController
   end
 
   def index
-    d = Driver.where(token: params[:reading][:token])
-    if d
+    if d = Driver.find_by token: params[:reading][:token]
       render json: d.readings
     end
   end
 
   def show
-    d = Driver.where(token: params[:reading][:token])
-    if d
+    if d = Driver.find_by token: params[:reading][:token]
       render json: d.readings.find(params[:id])
     end
   end
@@ -31,8 +27,7 @@ class ReadingsController < ApplicationController
     params.require(:reading).permit(
       :name,
       :value,
-      :timestamp,
-      :token
+      :timestamp
     )
   end
 end
