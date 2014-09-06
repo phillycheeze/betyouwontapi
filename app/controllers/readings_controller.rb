@@ -14,14 +14,14 @@ class ReadingsController < ApplicationController
   end
 
   def index
-    d = Driver.where(token: params[:token])
+    d = Driver.where(token: params[:reading][:token])
     if d
       render json: d.readings
     end
   end
 
   def show
-    d = Driver.where(token: params[:token])
+    d = Driver.where(token: params[:reading][:token])
     if d
       render json: d.readings.find(params[:id])
     end
