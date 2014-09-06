@@ -1,7 +1,7 @@
 class Reading < ActiveRecord::Base
   belongs_to :driver
 
-  def self.values 
+  def self.names 
     [
       'Odometer',
       'VehicleSpeed',
@@ -14,7 +14,7 @@ class Reading < ActiveRecord::Base
 
   validates :name,
     presence: true,
-    inclusion: values
+    inclusion: names
 
   validates :timestamp,
     presence: true

@@ -64,7 +64,7 @@ namespace :db do
       count = 0;
       models[:readings].times do
         readings.push({  
-          name: Reading.values.sample,
+          name: Reading.names.sample,
           value: Faker::Number.number(2),
           timestamp: Time.at(rand * Time.now.to_i),
           driver_id: rand(1..Driver.count)

@@ -8,8 +8,6 @@ gem 'spring', :group => :development
 
 gem 'pg'
 
-gem 'faker'
-
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -17,14 +15,15 @@ gem "rack-cors", :require => "rack/cors"
 
 gem 'active_model_serializers', '~> 0.8.1'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'faker'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano', :group => :development
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'factory_girl_rails'
+  gem 'minitest'
+  gem 'shoulda-matchers'
+  gem 'fuubar'
+  gem 'database_cleaner'
+end 
