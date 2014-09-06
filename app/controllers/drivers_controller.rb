@@ -3,7 +3,7 @@ class DriversController < ApplicationController
 
   def create
     if m = @current_user.drivers.create(create_params)
-      head :created
+      render json: m
     else
       render json: m.errors, status: :unprocessable_entity
     end

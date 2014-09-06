@@ -6,7 +6,7 @@ class ReadingsController < ApplicationController
     if d
       create_params.delete(:token)
       if r = d.readings.create(create_params)
-        head :created
+        render json: r
       else
         render json: r.errors, status: :unprocessable_entity
       end

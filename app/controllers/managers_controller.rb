@@ -1,7 +1,7 @@
 class ManagersController < ApplicationController
   def create
     if m = Manager.create(create_params)
-      head :created
+      render json: m
     else
       render json: user.errors, status: :unprocessable_entity
     end
