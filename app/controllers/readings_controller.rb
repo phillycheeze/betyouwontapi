@@ -1,11 +1,30 @@
 class ReadingsController < ApplicationController
+  before_action :authenticate, except: :create
+
   def create
+    d = Driver.where(token: create_params[:token])
+    if d
+      create_params.delete(:token)
+      if r = d.readings.create(create_params)
+        head :created
+      else
+        render json: r.errors, status: :unprocessable_entity
+      end
+    end
   end
 
   def index
+    d = Driver.where(token: params[:token])
+    if d
+      render json: d.readings
+    end
   end
 
   def show
+    d = Driver.where(token: params[:token])
+    if d
+      render json: d.readings.find(params[:id])
+    end
   end
 
   def create_params

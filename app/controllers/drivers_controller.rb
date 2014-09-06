@@ -1,4 +1,6 @@
 class DriversController < ApplicationController
+  before_action :authenticate
+
   def create
     if m = @current_user.drivers.create(create_params)
       head :created
