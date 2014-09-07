@@ -7,6 +7,4 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   post 'token' => 'drivers#token'
-
-  resources :locations, only: :create
 end
