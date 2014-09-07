@@ -3,7 +3,13 @@ class Driver < ActiveRecord::Base
   
   belongs_to :manager
   has_many :readings
-  has_many :locations
+
+  def self.alerts
+    ['Speeding', 'Crash']
+  end
+
+  validates :name,
+    presence: true
 
   def generate_token
     self.token = SecureRandom.hex(2)
