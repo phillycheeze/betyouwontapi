@@ -1,3 +1,9 @@
 class ReadingSerializer < ActiveModel::Serializer
-  attributes :id, :name, :value, :timestamp
+  attributes :id,
+    :odometer,
+    :speed,
+    :rpm,
+    :longitude,
+    :latitude,
+    :timestamp
 end

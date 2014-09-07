@@ -3,6 +3,7 @@ class Driver < ActiveRecord::Base
   
   belongs_to :manager
   has_many :readings
+  has_many :locations
 
   def generate_token
     self.token = SecureRandom.hex(2)

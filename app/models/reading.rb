@@ -1,20 +1,22 @@
 class Reading < ActiveRecord::Base
   belongs_to :driver
 
-  def self.names 
-    [
-      'Odometer',
-      'VehicleSpeed',
-      'EngineSpeed'
-    ]
-  end
-
-  validates :value,
+  validates :speed,
     presence: true
 
-  validates :name,
+  validates :rpm,
+    presence: true
+
+  validates :odometer,
+    presence: true
+
+  validates :longitude,
     presence: true,
-    inclusion: names
+    numericality: { greater_than: -180, less_than: 180 }
+    
+  validates :latitude,
+    presence: true,
+    numericality: { greater_than:  -90, less_than:  90 }
 
   validates :timestamp,
     presence: true

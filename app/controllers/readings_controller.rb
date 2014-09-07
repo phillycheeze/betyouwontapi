@@ -12,9 +12,12 @@ class ReadingsController < ApplicationController
 
   def create_params
     params.require(:reading).permit(
-      :name,
-      :value,
-      :timestamp
+      :speed,
+      :rpm,
+      :odometer,
+      :timestamp,
+      :longitude,
+      :latitude
     )
   end
 end

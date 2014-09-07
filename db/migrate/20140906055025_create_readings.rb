@@ -1,8 +1,11 @@
 class CreateReadings < ActiveRecord::Migration
   def change
     create_table :readings do |t|
-      t.string :name
-      t.float :value
+      t.float :speed
+      t.float :rpm
+      t.float :odometer
+      t.float :longitude
+      t.float :latitude
       t.timestamp :timestamp
 
       t.timestamps

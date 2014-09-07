@@ -7,8 +7,11 @@ RSpec.describe "readings API" do
       expect do
         post "readings",
           { reading: { 
-              name: 'EngineSpeed',
-              value: 108,
+              speed: 20,
+              odometer: 45,
+              rpm: 3500,
+              longitude: 60,
+              latitude: 40,
               timestamp: Time.now,
               token: driver.token
             } 

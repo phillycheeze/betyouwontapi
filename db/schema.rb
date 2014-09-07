@@ -36,8 +36,11 @@ ActiveRecord::Schema.define(version: 20140906091838) do
   end
 
   create_table "readings", force: true do |t|
-    t.string   "name"
-    t.float    "value"
+    t.float    "speed"
+    t.float    "rpm"
+    t.float    "odometer"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,4 +48,5 @@ ActiveRecord::Schema.define(version: 20140906091838) do
   end
 
   add_index "readings", ["driver_id"], name: "index_readings_on_driver_id", using: :btree
+
 end

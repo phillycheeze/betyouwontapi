@@ -15,8 +15,11 @@ FactoryGirl.define do
   end
 
   factory :reading do
-    name Reading.names.sample
-    value rand(1..100)
+    speed 10
+    rpm 1200
+    odometer 30000
+    longitude 12
+    latitude 45
     timestamp Time.now.to_i
     driver
   end

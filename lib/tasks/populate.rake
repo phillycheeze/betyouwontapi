@@ -64,8 +64,11 @@ namespace :db do
       count = 0;
       models[:readings].times do
         readings.push({  
-          name: Reading.names.sample,
-          value: Faker::Number.number(2),
+          odometer: rand(1..200000),
+          rpm: rand(1..6000),
+          speed: Faker::Number.number(2),
+          longitude: Faker::Address.longitude,
+          latitude: Faker::Address.latitude,
           timestamp: Time.at(rand * Time.now.to_i),
           driver_id: rand(1..Driver.count)
         })
